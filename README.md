@@ -1,74 +1,65 @@
-# TODO: Replicating Author (Year), "Title of the paper"
+# Replicating Card (1995): Using Geographic Variation in College Proximity to Estimate the Return to Schooling
 
-> **Template note, delete before you submit.** This is the ECON 5200 replication template.
-> Replace every line that starts with `TODO:`. The grader clones this repository into an
-> empty directory, builds the environment from `requirements.txt` and runs the one command
-> below. The number this README claims must be the number that run produces.
+ECON 5200 — Midterm Replication Study
 
 ## The paper and its headline claim
 
-- **Paper:** TODO: full citation (authors, year, title, journal, volume, pages).
-- **Identification strategy:** TODO: difference-in-differences / instrumental variables / regression discontinuity / matching.
-- **Headline claim:** TODO: one sentence, with the number and where it is in the paper (for example, Table 2, column 3).
-- **My replication:** TODO: my number beside theirs, and the gap in percent, as `python reproduce.py` prints it.
+- **Paper:** Card, D. (1995). "Using Geographic Variation in College Proximity to Estimate the Return to Schooling." In *Aspects of Labour Market Behaviour*, edited by Christofides, Grant, and Swidinsky. University of Toronto Press.
+- **Identification strategy:** Instrumental variables (IV).
+- **Headline claim:** The paper reports an IV estimate of 0.132 for the return to schooling in Table 4, Row 1.
+- **My replication:** My IV estimate is 0.1315, compared with the paper's estimate of 0.1320. The relative difference is approximately −0.38%. My specification is close to, but not identical to, the original specification.
+
+| Estimate | Original paper | Replication | Difference |
+|---|---:|---:|---:|
+| OLS coefficient | 0.0730 | 0.0747 | +0.0017 |
+| OLS SE | 0.0040 | 0.0035 | −0.0005 |
+| IV coefficient | 0.1320 | 0.1315 | −0.0005 |
+| IV SE | 0.0490 | 0.0550 | +0.0060 |
+
+The replication uses 3,010 observations, and the first-stage F-statistic is 13.3.
 
 ## Reproduce the headline table
 
-Python 3.11 or newer. From the repository root:
+Python 3.11 or newer is recommended.
 
-```bash
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python reproduce.py
-```
+Install the required packages using `requirements.txt` and run `replication_starter_card1995.ipynb` from top to bottom.
 
-`python reproduce.py` is the one command. Once `MY_PAPER` is set in `download_data.py`,
-it downloads the data if `data/` does not have it, runs `notebooks/01_positioning_and_replication.ipynb` and then
-`notebooks/02_robustness.ipynb` top to bottom in a fresh kernel, and prints the headline
-table from `output/headline_table.csv`. Executed copies of the notebooks, with their
-outputs, go to `output/executed/`.
+The notebook downloads the data directly from the public source and produces the baseline OLS and IV estimates, the replication comparison table, and the robustness results.
 
-- **Expected runtime:** TODO: minutes on your machine, measured from a clean clone (the empty template runs in under a minute).
+- **Expected runtime:** To be measured from a clean checkout.
+- **Automated reproduction command:** To be verified after testing `reproduce.py`.
 
 ## Data: source and licence
 
-- **Source:** TODO: the URL in `download_data.py` for your paper, and who produced the original data.
-- **Included or downloaded:** TODO: say which, and why.
+- **Source:** https://raw.githubusercontent.com/scunning1975/mixtape/master/card.dta
+- **Original data:** National Longitudinal Survey of Young Men used by David Card (1995).
+- **Included or downloaded:** Downloaded automatically by the notebook rather than included in the repository.
 
-The template downloads by default: `.gitignore` excludes `data/*.dta`, and
-`download_data.py` fetches the files on the first run. Two facts to check before you
-decide:
+The dataset contains 3,010 observations. Downloading the data directly keeps the data source visible and avoids storing an additional copy in the repository.
 
-- The five files from `scunning1975/mixtape` (castle, card, lee, hansen, abortion) are in a
-  repository under an MIT-style licence that permits copies if its notice is kept. The
-  underlying data were collected by the original authors.
-- The Dehejia-Wahba files on `users.nber.org/~rdehejia` state no licence. Download them;
-  do not commit them.
+## Robustness exercises
 
-If you decide to include the data, delete the `data/*.dta` line from `.gitignore`, commit
-the files with the licence notice, and say so above.
+The notebook includes the following robustness checks:
+
+- First-stage instrument strength.
+- Anderson–Rubin weak-instrument-robust confidence interval.
+- Alternative instrument specification using proximity to a two-year college.
+- Regional subsample analysis.
+- Two-instrument IV estimation and the Sargan overidentification test.
+- Placebo test using family structure at age 14.
+- Alternative specifications with additional endogenous variables and family background controls.
 
 ## Repository map
 
 | Path | What it is |
 |---|---|
-| `reproduce.py` | The one command: runs the notebooks in name order, prints the headline table |
-| `download_data.py` | Data URLs for the six papers; `python download_data.py --paper card` fetches one into `data/` |
-| `notebooks/01_positioning_and_replication.ipynb` | Sections 1 and 2: positioning notes, the replication, the theirs-vs-mine table, the discrepancy log. **No AI.** |
-| `notebooks/02_robustness.ipynb` | Section 3: four robustness exercises. AI allowed, logged in `ai-appendix.md` |
-| `output/headline_table.csv` | The theirs-vs-mine table, written by notebook 01 |
-| `output/` | Every table and figure the report uses |
-| `report/` | The report PDF |
-| `ai-appendix.md` | P.R.I.M.E. entries and full transcripts for Sections 3 to 6, and the no-AI statement for Sections 1 and 2 |
-| `AUDIT.md` | How to run the peer audit you file on a classmate's repository |
+| `README.md` | Project description, replication results, and instructions |
+| `replication_starter_card1995.ipynb` | Baseline replication and robustness exercises |
 | `requirements.txt` | Pinned package versions |
-
-TODO: add a row for every file you add.
+| `AI_Appendix.md` | Documentation of AI use and P.R.I.M.E. entries |
 
 ## Use of AI
 
-Sections 1 and 2 were completed without AI.
+[Complete this section with an accurate description of which sections involved AI assistance.]
 
-TODO: list the sections where you used AI (from 3, 4, 5 and 6), for what, and point to the
-entries in [`ai-appendix.md`](ai-appendix.md). If you used none, say so.
+The details of AI assistance are documented in [AI_Appendix.md](AI_Appendix.md).
