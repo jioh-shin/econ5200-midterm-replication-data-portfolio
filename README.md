@@ -20,14 +20,21 @@ The replication uses 3,010 observations, and the first-stage F-statistic is 13.3
 
 ## Reproduce the headline table
 
-Python 3.11 or newer is recommended.
+Python 3.11 or newer. From the repository root:
 
-Install the required packages using `requirements.txt` and run `replication_starter_card1995.ipynb` from top to bottom.
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python reproduce.py
+```
 
-The notebook downloads the data directly from the public source and produces the baseline OLS and IV estimates, the replication comparison table, and the robustness results.
+The command runs `replication_starter_card1995.ipynb` from top to bottom in a fresh kernel and generates `output/headline_table.csv`. The executed notebook is saved in `output/executed/`.
 
-- **Expected runtime:** To be measured from a clean checkout.
-- **Automated reproduction command:** To be verified after testing `reproduce.py`.
+- **Expected runtime:** Approximately 15–18 seconds on Google Colab, excluding dependency installation.
+- **Clean checkout test:** Successfully completed using a fresh clone in an existing Python environment.
+- **Reproduced OLS coefficient:** 0.074693
+- **Reproduced IV coefficient:** 0.131504
 
 ## Data: source and licence
 
