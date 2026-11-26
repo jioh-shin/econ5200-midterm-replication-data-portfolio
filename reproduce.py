@@ -24,7 +24,7 @@ from nbclient import NotebookClient
 from nbclient.exceptions import CellExecutionError
 
 ROOT = Path(__file__).resolve().parent
-NOTEBOOKS = ROOT / "notebooks"
+NOTEBOOKS = ROOT 
 OUTPUT = ROOT / "output"
 HEADLINE = OUTPUT / "headline_table.csv"
 CELL_TIMEOUT = 1800          # seconds per cell; raise it if one estimation takes longer
