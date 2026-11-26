@@ -70,6 +70,11 @@ The notebook includes the following robustness checks:
 
 ## Use of AI
 
-[Complete this section with an accurate description of which sections involved AI assistance.]
+AI was used in Section 3 for robustness checks, Python code,
+and interpretation of results.
 
-The details of AI assistance are documented in [ai-appendix.md](ai-appendix.md).
+AI was used in Section 6 for repository configuration,
+reproducibility testing, troubleshooting, and README documentation.
+
+The details of AI assistance are documented in
+[ai-appendix.md](ai-appendix.md).
