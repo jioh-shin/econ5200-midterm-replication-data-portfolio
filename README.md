@@ -32,9 +32,6 @@ python reproduce.py
 The command runs `replication_starter_card1995.ipynb` from top to bottom in a fresh kernel and generates `output/headline_table.csv`. The executed notebook is saved in `output/executed/`.
 
 - **Expected runtime:** Approximately 15–18 seconds on Google Colab, excluding dependency installation.
-- **Clean checkout test:** Successfully completed using a fresh clone in an existing Python environment.
-- **Reproduced OLS coefficient:** 0.074693
-- **Reproduced IV coefficient:** 0.131504
 
 ## Data: source and licence
 
