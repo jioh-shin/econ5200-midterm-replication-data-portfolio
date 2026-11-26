@@ -57,13 +57,19 @@ The notebook includes the following robustness checks:
 
 | Path | What it is |
 |---|---|
-| `README.md` | Project description, replication results, and instructions |
+| `README.md` | Project description and reproduction instructions |
+| `reproduce.py` | Runs the notebook and prints the headline table |
+| `download_data.py` | Downloads the Card dataset |
 | `replication_starter_card1995.ipynb` | Baseline replication and robustness exercises |
+| `output/headline_table.csv` | Original and replicated estimates |
+| `output/executed/` | Executed notebook with results |
+| `report/` | Final report PDF |
+| `ai-appendix.md` | Documentation of AI use and P.R.I.M.E. entries |
 | `requirements.txt` | Pinned package versions |
-| `AI_Appendix.md` | Documentation of AI use and P.R.I.M.E. entries |
+| `AUDIT.md` | Peer audit instructions |
 
 ## Use of AI
 
 [Complete this section with an accurate description of which sections involved AI assistance.]
 
-The details of AI assistance are documented in [AI_Appendix.md](AI_Appendix.md).
+The details of AI assistance are documented in [ai-appendix.md](ai-appendix.md).
